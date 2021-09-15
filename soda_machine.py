@@ -12,11 +12,11 @@ class SodaMachine:
         """Method will fill SodaMachine's register with certain amounts of each coin when called."""
         for index in range(8):
             self.register.append(coins.Quarter())
-            for index in range(10):
-                self.register.append(coins.Dime())
-                for index in range(20):
-                    self.register.append(coins.Nickel())
-                    for index in range(50):
+        for index in range(10):
+            self.register.append(coins.Dime())
+        for index in range(20):
+            self.register.append(coins.Nickel())
+        for index in range(50):
                         self.register.append(coins.Penny())
 
     def fill_inventory(self):
@@ -30,7 +30,9 @@ class SodaMachine:
 
     def begin_transaction(self, customer):
         """Method is complete. Initiates purchase if user decides to proceed. No errors."""
+        print("HI2")
         will_proceed = user_interface.display_welcome()
+        print("HI")
         if will_proceed:
             self.run_transaction(customer)
 
