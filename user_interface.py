@@ -1,5 +1,8 @@
 import os
 
+import cans
+from cans import Can
+from cans import Can
 
 def simulation_main_menu():
     """Main menu prompting user to choose an option"""
@@ -48,7 +51,7 @@ def display_welcome():
 
 def output_text(text):
     """User input method that will print to console any string passed in as an argument"""
-    print("text")
+    print(text)
 
 
 def clear_console():
@@ -74,7 +77,7 @@ def soda_selection(inventory):
         print("Please choose from the following options:")
         i = 1
         for can in soda_options:
-            print("\n\tEnter -{i}- for {can} : ${can.price}")
+            print(f"\n\tEnter -{i}- for {can.name} : ${can.price}")
             i += 1
         user_selection = try_parse_int(input("Selection:"))
         validated_user_selection = validate_coin_choice(user_selection, soda_options)
@@ -111,9 +114,10 @@ def get_unique_can_names(inventory):
     return unique_cans
 
 
-def display_can_cost(selected_can):
+def display_can_cost(selected_soda ):
     """Displays the name of a can and its price"""
-    print(f'The price of a {selected_can.price} is ${selected_can.price}')
+
+    print(f'The price of a {selected_soda.name} is ${selected_soda.price}')
 
 
 def display_payment_value(customer_payment):
